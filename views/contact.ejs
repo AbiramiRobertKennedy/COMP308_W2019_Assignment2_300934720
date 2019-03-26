@@ -1,0 +1,54 @@
+<!--Redirects to header.ejs in partials folder-->
+<% include ./partials/header.ejs %>
+    <main>
+     <!--Contact page content area-->
+      <% if(title == "Contact me"){ %>
+      <div class="jumbotron jumbotron-fluid">
+        <div
+          class="container"
+          style="background-image:url(https://www.nosm.ca/wp-content/uploads/2018/04/iStock-637945400-e1524156404942.jpg); background-repeat:no-repeat; max-width: 100%;"
+        >
+          <h1 class="display-2" style="color:gray; font-weight:bolder">CONTACT ME</h1>
+          <p class="lead" style="font-weight:bolder">
+            FEEDBACK FORM
+          </p>
+          <hr class="my-4" />
+          <table style="width:100%">
+          <tr>
+          <td class="fieldLabel">First Name:</td>
+          <td><input type="text" size="30" name="fname"></td>
+          </tr>
+          <tr>
+          <td class="fieldLabel">Last Name:</td>
+          <td><input type="text" size="30" name="lname"></td>
+          </tr>
+          <tr>
+          <td class="fieldLabel">E-mail:</td>
+          <td><input type="text" size="30" name="mail"></td>
+          </tr>
+          <tr>
+          <td class="fieldLabel">Contact Number:</td>
+          <td><input type="text" size="30" name="num"></td>
+          </tr>
+          <tr>
+          <td class="fieldLabel">Message:</td>
+          <td><input type="text" size="100" name="msg"></td>
+          </tr>
+        </div>
+        </div>  
+        <img
+            id="mail-image"
+            alt="mail"
+            src="/Assets/images/mail.png"
+            height="40px"
+        />  
+        <h4 align="left">abirami@gmail.com</h4>
+        <br>
+        <br>
+        <input type="button" onclick="window.location.href = './';" value="SEND FEEDBACK"/> 
+        <br>
+        <br>      
+      <% } %>
+      
+
+<% include ./partials/footer.ejs %>

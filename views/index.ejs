@@ -1,0 +1,226 @@
+<!--Redirects to header.ejs in partials folder-->
+<% include ./partials/header.ejs %>   
+    <main>
+      <!--Home page content area-->
+      <% if(title == "Home"){ %>
+      <div class="jumbotron jumbotron-fluid">
+        <div
+          class="container"
+          style="background-image:url(https://backgroundcheckall.com/wp-content/uploads/2017/12/white-computer-background-5.jpg); background-repeat:no-repeat; max-width: 100%;"
+        >
+          <h1 class="display-2" style="color:gray; font-weight:bolder">HOME</h1>
+          <p class="lead" style="font-weight:bolder">
+            Thanks for visiting my portfolio!!
+          </p>
+          <hr class="my-4" />
+          <p1
+            class="display-6" style="color:black; font-size:22px; font-family: cursive;"
+          >
+            Hello there!!!! This is Abirami Kennedy
+            <br />
+            I am from Toronto.
+            <br />
+            <br />
+            <br />
+            To use my knowledge, talents, skills
+            <br />
+            and empathy to earn
+            <br />
+            <br />
+            *** The love of my family
+            <br />
+            *** The companionship of my friends
+            <br />
+            *** The recognition of my peers
+            <br />
+            *** The leadership of my teams
+            <br />
+            <br />
+            Click on logo to know more....
+            <br />
+          </p1>
+        </div>
+      </div>
+      <% } %> 
+      <!--About page content area-->
+      <% if(title == "About me"){ %>
+      <div class="jumbotron jumbotron-fluid">
+        <div
+          class="container"
+          style="background-image:url(https://img1.akspic.com/image/9545-texture-paper-white-material-1920x1080.jpg); background-repeat:no-repeat; max-width: 100%;"
+        >
+          <h1 class="display-2" style="color:gray; font-weight:bolder">
+            ABOUT ME
+          </h1>
+          <p class="lead" style="font-weight: bold">
+            ABIRAMI ROBERT KENNEDY
+          </p>
+          <hr class="my-4" />
+          <p1
+            class="display-6" style="color:black; font-size:18px; font-family: cursive;"
+          >
+            I am a mainframe developer with 3 years of experience. I have worked
+            on COBOL, Jcl, REXX, DB2, VSAM etc.
+            <br />
+            <br />
+            I worked as an Application Development Analyst in Accenture India
+            for 2 years and as a Technical Systems Analyst Co-op in RBC for an
+            year.
+            <br />
+          </p1>
+          <br />
+          <img
+            id="image"
+            alt="headshot"
+            src="https://media.licdn.com/dms/image/C4E03AQE8AZ3k6RMAew/profile-displayphoto-shrink_200_200/0?e=1555545600&v=beta&t=bemJigWz_LSFFvFaEZ_sTes_cJ8I1s6i721uX0prStY"
+            height="200px"
+          />
+          <hr class="my-4" />
+          <a class="btn btn-primary" href="/Assets/resume.pdf" target="_blank" role="button">Resume</a>
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/abiramirobertkennedy/" target="_blank" role="button">LinkedIn</a>
+        </div>
+      </div>
+      <% } %> 
+      <!--Projects page content area-->
+      <% if(title == "My projects"){ %>
+      <div class="jumbotron jumbotron-fluid">
+        <div
+          class="container"
+          style="background-image:url(https://img1.akspic.com/image/9545-texture-paper-white-material-1920x1080.jpg); background-repeat:no-repeat; max-width: 100%;"
+        >
+          <h1 class="display-2" style="color:gray; font-weight:bolder">
+            MY PROJECTS
+          </h1>
+          <p class="lead" style="color:gray; font-weight:bold";>
+            BOOKHUB
+          </p>
+          <hr class="my-4" />
+          <p>
+            Bookhub, is an application that provides a platform to search books
+            of their interest through name, ISBN, image and even barcode, tracks
+            their reading and stores them for future reference purposes. Also,
+            suggests user with great books on the market which matches their
+            interest. Users can chat about books to their friends often and can
+            even provide reviews on the books they have read which can help
+            other users as well.
+          </p>
+          <br />
+          <img
+            id="proj1"
+            alt="book"
+            src="/Assets/images/proj1.png"
+            height="140px"
+          />
+        </div>
+      </div>
+      <div class="jumbotron jumbotron-fluid">
+        <div
+          class="container"
+          style="background-image:url(https://img1.akspic.com/image/9545-texture-paper-white-material-1920x1080.jpg); background-repeat:no-repeat; max-width: 100%;"
+        >
+          <p class="lead" style="color:gray; font-weight:bold" ;>
+            OZI'S SNOOKER CLUB
+          </p>
+          <hr class="my-4" />
+          <p>
+            Worked in creating a webpage for Ozi’s Snooker Club. Created a page
+            which can display professional player’s profiles and created
+            database. Displays tournament calendar and also feedback options.
+          </p>
+          <br />
+          <img
+            id="proj2"
+            alt="ozi"
+            src="/Assets/images/proj2.jpg"
+            height="140px"
+          />
+        </div>
+      </div>
+      <div class="jumbotron jumbotron-fluid">
+        <div
+          class="container"
+          style="background-image:url(https://img1.akspic.com/image/9545-texture-paper-white-material-1920x1080.jpg); background-repeat:no-repeat; max-width: 100%;"
+        >
+          <p class="lead" style="color:gray; font-weight:bold" ;>
+            ONLINE THRIFT EXCHANGE
+          </p>
+          <hr class="my-4" />
+          <p>
+            A well-developed online platform which directly connects donors and
+            recipients and verifies charity organization authenticity,
+            qualification as well as eligibility plays a critical role in
+            letting people avoid fraud, donate wisely and receive safely and
+            easily.
+          </p>
+          <br />
+          <img
+            id="proj3"
+            alt="thrift"
+            src="/Assets/images/proj3.jpg"
+            height="140px"
+          />
+        </div>
+      </div>
+      <% } %> 
+      <!--Services page content area-->
+      <% if(title == "Services offered"){ %>
+      <div class="jumbotron jumbotron-fluid">
+        <div
+          class="container"
+          style="background-image:url(http://s1.1zoom.me/b5050/428/Apple_iPhone_Macbook_Laptops_Glasses_Telephone_519457_1440x900.jpg); background-repeat:no-repeat; max-width: 100%;"
+        >
+          <h1 class="display-2" style="color:chocolate; font-weight:bolder">
+            SERVICES OFFERED
+          </h1>
+          <br />
+          <br />
+          <br />
+          <img
+          id="serv1"
+          alt="test"
+          style="float:right"
+          src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto/gigs/102857819/original/cc0e8941eddba48226341e82a685719d7dd434aa/perform-testing-and-qa.jpg"
+          height="200px"
+          width="275px"
+        />
+        <img
+          id="serv1"
+          alt="auto"
+          style="float:right"
+          src="https://img.deusm.com/informationweek/august/automation-shutterstock489.jpg"
+          height="200px"
+          width="275px"
+        />
+        <img
+          id="serv1"
+          alt="dev"
+          style="float:right"
+          src="http://softsmith.ca/Professional/Portfolio/Courses/CPAN411/HTML/ispf.utility.dsparm.gif"
+          height="200px"
+          width="275px"
+        />
+          <br />
+          <br />
+          <p class="lead" style="color:black; font-weight:bold;">
+            *** Mainframe testing
+            <br>
+            <br>
+            *** REXX automation
+            <br>
+            <br>
+            *** JCL Development
+            <br>
+            <br>
+            *** Technical documentation
+            <br>
+            <br>
+            *** Database design
+          </p>
+          <br>
+        </div>
+      </div>
+      <% } %>
+    </main>
+<% include ./partials/footer.ejs %>
+
+    
