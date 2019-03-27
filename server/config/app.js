@@ -1,10 +1,4 @@
-/*************************************/
-/*             app.js                */
-/*   Abirami Robert Kennedy          */
-/*          300934720                */
-/*       16th February, 2019         */
-/*************************************/
-
+// moddules for node and express
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -15,6 +9,7 @@ let cors = require('cors');
 // modules for authentication
 let session = require('express-session');
 let passport = require('passport');
+
 
 let passportJWT = require('passport-jwt');
 let JWTStrategy = passportJWT.Strategy;
@@ -33,33 +28,35 @@ mongoose.connect(DB.URI, { useNewUrlParser: true });
 
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
-mongoDB.once('open', ()=> {
-  console.log("Connected to MongoDB...");
+mongoDB.once('open', () => {
+    console.log("Connected to MongoDB...");
 });
 
-
-let indexRouter = require('../routes/index');    //access router
+let indexRouter = require('../routes/index');
 let contactRouter = require('../routes/contact');
+
 
 let app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, '../views'));  //access views folder
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../../public'))); //access public folder
-app.use(express.static(path.join(__dirname, '../../node_modules')));  //access node_modules
+app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, '../../node_modules')));
+
+
 app.use(cors());
 
 // setup express-session
 app.use(session({
-  secret: "SomeSecret",
-  saveUninitialized: false,
-  resave: false
+    secret: "SomeSecret",
+    saveUninitialized: false,
+    resave: false
 }));
 
 // initialize flash
@@ -74,6 +71,7 @@ app.use(passport.session());
 // create a User model
 let userModel = require('../models/user');
 let User = userModel.User;
+
 // implement a User authetication strategy
 passport.use(User.createStrategy());
 
@@ -87,37 +85,39 @@ jwtOptions.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
 jwtOptions.secretOrKey = DB.secret;
 
 let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
-  User.findById(jwt_payload.id)
-    .then(user => {
-      return done(null, user);
-    })
-    .catch(err => {
-      return done(err, false);
-    });
+    User.findById(jwt_payload.id)
+        .then(user => {
+            return done(null, user);
+        })
+        .catch(err => {
+            return done(err, false);
+        });
 });
 
 passport.use(strategy);
 
+
 app.use('/api', indexRouter);
-app.use('/api/contact-list', passport.authenticate('jwt', {session: false}), contactRouter); 
+app.use('/api/contact-list', contactRouter); // TODO - protect this section
+
 app.get('*', (req, res) => {
-  res.sendfile(path.join(__dirname, '../../public/index.html'));
+    res.sendfile(path.join(__dirname, '../../public/index.html'));
 });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+    next(createError(404));
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;
