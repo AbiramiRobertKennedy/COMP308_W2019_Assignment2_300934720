@@ -1,35 +1,38 @@
-/*************************************/
-/*     Index file for routing        */
-/*   Abirami Robert Kennedy          */
-/*          300934720                */
-/*       16th February, 2019         */
-/*************************************/
 let express = require('express');
 let router = express.Router();
 
+let indexController = require('../controllers/index');
+
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home' });       //Redirects to home page
-});
+//router.get('/', indexController.displayHomePage);
 
 /* GET about page. */
-router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About me' });    //Redirects to About me page
-});
+//router.get('/about', indexController.displayAboutPage);
 
-/* GET projects page. */
-router.get('/projects', function(req, res, next) {
-  res.render('index', { title: 'My projects' });  //Redirects to My projects page
-});
+/* GET products page. */
+//router.get('/products', indexController.displayProductsPage);
 
-/* GET service page. */
-router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services offered' }); //Redirects to Services Offered page
-});
+/* GET services page. */
+//router.get('/services', indexController.displayServicesPage);
 
 /* GET contact page. */
-router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Contact me' });   //Redirects to contact page
-});
+//router.get('/contact', indexController.displayContactPage);
+
+/* GET - displays the Login Page */
+//router.get('/login', indexController.displayLoginPage);
+
+/* POST - processes the Login Page */
+router.post('/login', indexController.processLoginPage);
+
+/* GET - displays the User Registration Page */
+//router.get('/register', indexController.displayRegisterPage);
+
+/* POST - processes the User Registration Page */
+router.post('/register', indexController.processRegisterPage);
+
+/* GET - perform user logout */
+router.get('/logout', indexController.performLogout);
+
 
 module.exports = router;
