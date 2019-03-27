@@ -11,20 +11,20 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
-let indexRouter = require('./routes/index');    //access router
+let indexRouter = require('../routes/index');    //access router
 
 let app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));  //access views folder
+app.set('views', path.join(__dirname, '../../views'));  //access views folder
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public'))); //access public folder
-app.use(express.static(path.join(__dirname, 'node_modules')));  //access node_modules
+app.use(express.static(path.join(__dirname, '../../public'))); //access public folder
+app.use(express.static(path.join(__dirname, '../../node_modules')));  //access node_modules
 
 app.use('/', indexRouter);
 
