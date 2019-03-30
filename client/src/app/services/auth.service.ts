@@ -12,7 +12,6 @@ export class AuthService {
   private authToken: any;
 
   private endpoint = 'https://comp308-w2019-asgnmnt2-abirami.herokuapp.com/api/';
-
   //private endpoint = 'http://localhost:3000/api/';
 
   private httpOptions = {
