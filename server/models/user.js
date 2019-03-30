@@ -1,3 +1,9 @@
+/*
+JS - User
+Abirami Robert Kennedy
+300934720
+3/30/2019
+*/
 // require modules for our User Model
 let mongoose = require("mongoose");
 let passportLocalMongoose = require("passport-local-mongoose");

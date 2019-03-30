@@ -1,3 +1,9 @@
+/*
+Auth-guard
+Abirami Robert Kennedy
+300934720
+3/30/2019
+*/
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -16,6 +22,7 @@ export class AuthGuard implements CanActivate {
     private router: Router
     ) {}
 
+//Secure sections from non-registered users
  canActivate(): boolean {
     if(this.authService.loggedIn()) {
       return true;

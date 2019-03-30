@@ -1,3 +1,10 @@
+/*
+Contact - delete
+Abirami Robert Kennedy
+300934720
+3/30/2019
+*/
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContactListService } from 'src/app/services/contact-list.service';
@@ -30,6 +37,8 @@ export class ContactDeleteComponent implements OnInit {
 
     this.deleteContact(this.contact);
   }
+
+  //Secured delete with warning
   private deleteContact(contact: Contact): void {
     this.contactListService.deleteContact(contact).subscribe(data => {
       if (data.success) {

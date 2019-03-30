@@ -1,3 +1,9 @@
+/*
+Login component
+Abirami Robert Kennedy
+300934720
+3/30/2019
+*/
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -21,6 +27,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.user = new User();
   }
+
+//Login authenticated user or prompt to register
   onLoginSubmit(): void {
     this.authService.authenticateUser(this.user).subscribe(data => {
      if (data.success) {

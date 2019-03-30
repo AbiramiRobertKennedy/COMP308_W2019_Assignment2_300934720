@@ -1,3 +1,9 @@
+/*
+Register page
+Abirami Robert Kennedy
+300934720
+3/30/2019
+*/
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -23,6 +29,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.user = new User();
   }
+
+//Register new user
   onRegisterSubmit(): void {
     this.authService.registerUser(this.user).subscribe(data => {
       if (data.success) {

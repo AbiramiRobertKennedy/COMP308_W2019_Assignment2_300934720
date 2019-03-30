@@ -1,3 +1,9 @@
+/*
+Contact list service
+Abirami Robert Kennedy
+300934720
+3/30/2019
+*/
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -26,7 +32,7 @@ export class ContactListService {
   constructor(private http: HttpClient) {
     this.user = new User();
   }
-
+//Get contact list
   public getList(): Observable<any> {
     this.loadToken();
     return this.http.get<any>(this.endpoint, this.httpOptions);
@@ -36,22 +42,22 @@ export class ContactListService {
     this.loadToken();
     return this.http.get<any>(this.endpoint + 'edit/' + contact._id, this.httpOptions);
   }
-
+//Add contact list
   public addContact(contact: Contact): Observable<any> {
     this.loadToken();
     return this.http.post<any>(this.endpoint + 'add', contact, this.httpOptions);
   }
-
+//Edit contact list
   public editContact(contact: Contact): Observable<any> {
     this.loadToken();
     return this.http.post<any>(this.endpoint + 'edit/' + contact._id, contact, this.httpOptions);
   }
-
+//Delete contact list
   public deleteContact(contact: Contact): Observable<any> {
     this.loadToken();
     return this.http.get<any>(this.endpoint + 'delete/' + contact._id, this.httpOptions);
   }
-
+//Tokens to authenticate user
   private loadToken() {
     const token = localStorage.getItem('id_token');
     this.authToken = token;

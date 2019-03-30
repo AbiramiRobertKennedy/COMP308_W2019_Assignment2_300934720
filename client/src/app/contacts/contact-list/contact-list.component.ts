@@ -1,3 +1,10 @@
+/*
+Contact - list
+Abirami Robert Kennedy
+300934720
+3/30/2019
+*/
+
 import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/models/contact';
 import { ContactListService } from 'src/app/services/contact-list.service';
@@ -24,12 +31,14 @@ export class ContactListComponent implements OnInit {
     this.displayContactList();
   }
 
+//Secure delete
   private onDeleteClick(): void {
     if(!confirm('Are You Sure?')) {
       this.router.navigate(['/contact/contact-list']);
     }
   }
 
+//Display contact list after logging in
   displayContactList(): void {
     this.contactListService.getList().subscribe(data => {
       if(data.success) {

@@ -1,3 +1,9 @@
+/*
+Footer page
+Abirami Robert Kennedy
+300934720
+3/30/2019
+*/
 import { Component, OnInit } from '@angular/core';
 
 @Component({

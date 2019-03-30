@@ -1,3 +1,10 @@
+/*
+Contact - details
+Abirami Robert Kennedy
+300934720
+3/30/2019
+*/
+
 import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/models/contact';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -32,6 +39,8 @@ export class ContactDetailsComponent implements OnInit {
       this.getContact(this.contact);
     }
   }
+
+//Get contact details
   private getContact(contact: Contact): void {
     this.contactListService.getContact(contact).subscribe(data => {
       this.contact = data.contact;
@@ -39,6 +48,7 @@ export class ContactDetailsComponent implements OnInit {
   }
   onDetailsPageSubmit(): void {
     switch (this.title) {
+//Add contact details
       case 'Add Contact':
       this.contactListService.addContact(this.contact).subscribe(data => {
         if (data.success) {
@@ -50,6 +60,7 @@ export class ContactDetailsComponent implements OnInit {
         }
       });
       break;
+//Edit contact details
       case 'Edit Contact':
       this.contactListService.editContact(this.contact).subscribe(data => {
         if (data.success) {

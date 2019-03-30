@@ -1,11 +1,55 @@
+<!--
+Contact page
+Abirami Robert Kennedy
+300934720
+3/30/2019
+-->
 
-<div *ngIf="isLoggedIn()" class="container">
+<!--Contact page components-->
+<h1 class="display-2" style="color:gray; font-weight:bolder">CONTACT ME</h1>
+<p class="lead" style="font-weight:bolder">
+  FEEDBACK FORM
+</p>
+<hr class="my-4" />
+<table style="width:100%">
+<tr>
+<td class="fieldLabel">First Name:</td>
+<td><input type="text" size="30" name="fname"></td>
+</tr>
+<tr>
+<td class="fieldLabel">Last Name:</td>
+<td><input type="text" size="30" name="lname"></td>
+</tr>
+<tr>
+<td class="fieldLabel">E-mail:</td>
+<td><input type="text" size="30" name="mail"></td>
+</tr>
+<tr>
+<td class="fieldLabel">Message:</td>
+<td><input type="text" size="100" name="msg"></td>
+</tr>
+<img
+  id="mail-image"
+  alt="mail"
+  src="assets/images/mail.png"
+  height="40px"
+/>
+<h4 align="left">abirami@gmail.com</h4>
+<br>
+<br>
+<input type="button" onclick="window.location.href = './';" value="SEND FEEDBACK"/>
+<br>
+<br>
+<div class="container">
   <div class="row">
-    <div class="col col-md-6">
+    <div class="col col-md-10">
       <div class="card">
         <h5 class="card-header alert-success">Secure</h5>
-        <div class="card-body">
+        <div *ngIf="isLoggedIn()" class="card-body">
           <a routerLink="contact-list" class="btn btn-primary"><i class="fas fa-users fa-lg"></i> Contact List</a>
+        </div>
+        <div *ngIf="!isLoggedIn()" class="card-body">
+          <a class="btn btn-primary"><i class="fas fa-users fa-lg"></i> Log in to view </a>
         </div>
       </div>
     </div>

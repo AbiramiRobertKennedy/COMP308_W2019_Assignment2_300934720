@@ -1,3 +1,9 @@
+/*
+Auth service
+Abirami Robert Kennedy
+300934720
+3/30/2019
+*/
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
@@ -28,6 +34,8 @@ export class AuthService {
   ) {
     this.user = new User();
    }
+
+//Authenticate registered user
    public registerUser(user: User): Observable<any> {
     return this.http.post<any>(this.endpoint + 'register', user, this.httpOptions);
   }
@@ -36,12 +44,15 @@ export class AuthService {
     return this.http.post<any>(this.endpoint + 'login', user, this.httpOptions);
   }
 
+//Local storage
   public storeUserData(token: any, user: User): void {
     localStorage.setItem('id_token', 'Bearer ' + token);
     localStorage.setItem('user', JSON.stringify(user));
     this.authToken = token;
     this.user = user;
   }
+
+//Perform logout
   public logout(): Observable<any> {
     this.authToken = null;
     this.user = null;

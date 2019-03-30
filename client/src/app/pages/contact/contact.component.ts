@@ -1,3 +1,9 @@
+/*
+Contact page
+Abirami Robert Kennedy
+300934720
+3/30/2019
+*/
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BasePageComponent } from 'src/app/partials/base-page/base-page.component';
@@ -19,6 +25,8 @@ export class ContactComponent extends BasePageComponent implements OnInit {
 
   ngOnInit() {
   }
+
+//Show contact list only logged in
   isLoggedIn(): boolean {
     return this.authService.loggedIn();
   }
